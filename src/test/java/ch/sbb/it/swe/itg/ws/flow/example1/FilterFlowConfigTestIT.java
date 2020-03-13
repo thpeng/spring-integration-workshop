@@ -32,7 +32,6 @@ public class FilterFlowConfigTestIT {
     @Test
     @SneakyThrows
     public void testFilterCargo() {
-        //TODO countDownLatches?
         Thread.sleep(3000);
         verify(outputHandler, times(1)).handle(outputCaptor.capture(), any());
         assertThat(outputCaptor.getValue().getEisenbahnVerkehrsUnternehmen()).isEqualTo(EisenbahnVerkehrsUnternehmen.SBB);

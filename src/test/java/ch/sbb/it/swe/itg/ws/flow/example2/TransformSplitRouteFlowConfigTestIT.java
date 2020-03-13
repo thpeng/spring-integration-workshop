@@ -33,7 +33,6 @@ public class TransformSplitRouteFlowConfigTestIT {
     @Test
     @SneakyThrows
     public void testFahrtPunktSplitByBetreiber() {
-        //TODO countDownLatches?
         Thread.sleep(3000);
         verify(sbbOutputHandler, times(3)).handle(any(), any());
         verify(blsOutputHandler, times(3)).handle(any(), any());

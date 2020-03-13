@@ -38,10 +38,8 @@ public class MicroBatchFlowConfigTest {
     @Test
     @SneakyThrows
     public void testMicroBatch() {
-        //TODO countDownLatches?
         Thread.sleep(3500);
         verify(outputHandler, times(2)).handle(outputCaptor.capture(), any());
-
 
         assertThat(outputCaptor.getAllValues()
                 .stream()
