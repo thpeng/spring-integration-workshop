@@ -28,7 +28,7 @@ public class CUS implements MessageSource<FahrtLauf> {
     }
 
 
-    private FahrtLauf cargoTemplate() {
+    public static FahrtLauf cargoTemplate() {
         return FahrtLauf.builder()
                 .schluessel("cargo")
                 .eisenbahnVerkehrsUnternehmen(EisenbahnVerkehrsUnternehmen.SBB_CARGO)
@@ -39,7 +39,7 @@ public class CUS implements MessageSource<FahrtLauf> {
                 .build();
     }
 
-    private FahrtLauf ic61Template() {
+    public static FahrtLauf ic61Template() {
         return FahrtLauf.builder()
                 .schluessel("IC61")
                 .eisenbahnVerkehrsUnternehmen(EisenbahnVerkehrsUnternehmen.SBB)
