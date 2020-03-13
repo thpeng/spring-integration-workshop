@@ -14,10 +14,10 @@ import java.util.List;
 
 public class CUS implements MessageSource<FahrtLauf> {
 
-    List<FahrtLauf> lauefe = Lists.newArrayList(
+    private List<FahrtLauf> lauefe = Lists.newArrayList(
             ic61Template(), cargoTemplate());
 
-    int index = 0;
+    private int index = 0;
 
     @Override
     public Message<FahrtLauf> receive() {
@@ -31,6 +31,7 @@ public class CUS implements MessageSource<FahrtLauf> {
     private FahrtLauf cargoTemplate() {
         return FahrtLauf.builder()
                 .schluessel("cargo")
+                .eisenbahnVerkehrsUnternehmen(EisenbahnVerkehrsUnternehmen.SBB_CARGO)
                 .fahrtPunkte(Lists.newArrayList(FahrtPunkt.builder().betriebspunkt(Betriebspunkt.INTERLAKEN_WEST)
                                 .build(),
                         FahrtPunkt.builder().betriebspunkt(Betriebspunkt.BASEL_SBB)
